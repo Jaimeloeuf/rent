@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Searchbar } from './Searchbar';
 import { PostingCard } from './PostingCard';
 
-import { Posting } from './types';
-import { getPostingData } from './utils/PostingData';
+import { Posting } from '../../types';
+import { getPostingData } from '../../utils/PostingData';
 
 export function Home() {
   const [postings, setPostings] = useState<Array<Posting>>([]);

@@ -1,4 +1,4 @@
-import type { Posting } from './types';
+import type { Posting } from '../../types';
 
 /**
  * Simple utility function to convert isoDateTimeString to localeDateString
