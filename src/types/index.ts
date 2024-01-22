@@ -1,4 +1,4 @@
-export type Posting = {
+export type Post = {
   id: string;
 
   /**

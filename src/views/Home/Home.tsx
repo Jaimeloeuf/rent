@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Searchbar } from './Searchbar';
-import { PostingCard } from './PostingCard';
+import { PostCard } from './PostCard';
 
-import { Posting } from '../../types';
-import { getPostingData } from '../../utils/PostingData';
+import { Post } from '../../types';
+import { getPostData } from '../../utils/PostData';
 
 export function Home() {
-  const [postings, setPostings] = useState<Array<Posting>>([]);
+  const [posts, setPosts] = useState<Array<Post>>([]);
 
   useEffect(() => {
     async function fetchData() {
-      setPostings(await getPostingData());
-      console.log('data is loaded');
+      setPosts(await getPostData());
     }
 
     fetchData();
@@ -32,9 +31,9 @@ export function Home() {
 
         <div className="w-full">
           {/* @todo click to open new link */}
-          {postings.map((posting) => (
-            <div key={posting.id} className="pb-4">
-              <PostingCard posting={posting} />
+          {posts.map((post) => (
+            <div key={post.id} className="pb-4">
+              <PostCard post={post} />
             </div>
           ))}
         </div>

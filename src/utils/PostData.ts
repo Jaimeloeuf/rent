@@ -1,9 +1,9 @@
-import type { Posting } from '../types';
+import type { Post } from '../types';
 
 /**
- * Hardcoded Posting Data.
+ * Hardcoded Post Data.
  */
-export async function getPostingData(): Promise<Array<Posting>> {
+export async function getPostData(): Promise<Array<Post>> {
   return [
     {
       id: '01HHM9NMH72CSSRJ25KG7B7T1Q',
