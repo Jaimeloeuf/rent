@@ -3,14 +3,14 @@ import { Searchbar } from './Searchbar';
 import { PostCard } from './PostCard';
 
 import { Post } from '../../types';
-import { getPostData } from '../../utils/PostData';
+import { getPosts } from '../../utils';
 
 export function Home() {
-  const [posts, setPosts] = useState<Array<Post>>([]);
+  const [posts, setPosts] = useState<Record<string, Post>>({});
 
   useEffect(() => {
     async function fetchData() {
-      setPosts(await getPostData());
+      setPosts(await getPosts());
     }
 
     fetchData();
@@ -31,7 +31,7 @@ export function Home() {
 
         <div className="w-full">
           {/* @todo click to open new link */}
-          {posts.map((post) => (
+          {Object.values(posts).map((post) => (
             <div key={post.id} className="pb-4">
               <PostCard post={post} />
             </div>
