@@ -25,6 +25,14 @@ const Posts: Record<string, Post> = {
     imgLinks: [
       'https://photos.zillowstatic.com/fp/473d7c134883616a2cded96363e04e40-p_e.jpg',
       'https://cdn.gobankingrates.com/wp-content/uploads/2018/06/rugged-old-house-shutterstock_412621738.jpg?webp=1&w=675&quality=75',
+      'https://photos.zillowstatic.com/fp/473d7c134883616a2cded96363e04e40-p_e.jpg',
+      'https://cdn.gobankingrates.com/wp-content/uploads/2018/06/rugged-old-house-shutterstock_412621738.jpg?webp=1&w=675&quality=75',
+      'https://photos.zillowstatic.com/fp/473d7c134883616a2cded96363e04e40-p_e.jpg',
+      'https://cdn.gobankingrates.com/wp-content/uploads/2018/06/rugged-old-house-shutterstock_412621738.jpg?webp=1&w=675&quality=75',
+      'https://photos.zillowstatic.com/fp/473d7c134883616a2cded96363e04e40-p_e.jpg',
+      'https://cdn.gobankingrates.com/wp-content/uploads/2018/06/rugged-old-house-shutterstock_412621738.jpg?webp=1&w=675&quality=75',
+      'https://photos.zillowstatic.com/fp/473d7c134883616a2cded96363e04e40-p_e.jpg',
+      'https://cdn.gobankingrates.com/wp-content/uploads/2018/06/rugged-old-house-shutterstock_412621738.jpg?webp=1&w=675&quality=75',
     ],
   },
   '01HHM9NMH72CSSSRJ25KG7B7TQ11': {
@@ -97,4 +105,11 @@ const Posts: Record<string, Post> = {
  */
 export async function getPosts() {
   return Posts;
+}
+
+/**
+ * Get a single Post. Can be null if post of postID not found.
+ */
+export async function getPost(postID: string): Promise<Post | null> {
+  return Posts[postID];
 }
