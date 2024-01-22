@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import type { Posting } from '../../types';
 
 /**
@@ -12,7 +14,7 @@ type Props = {
 
 export function PostingCard({ posting }: Props) {
   return (
-    <a href="/about">
+    <Link to={`post/${posting.id}`}>
       <div className="flex w-full flex-col justify-between gap-6 rounded-xl border border-zinc-200 p-2 pb-4 shadow hover:shadow-lg sm:flex-row sm:pb-2">
         <div className="w-full">
           <img
@@ -36,6 +38,6 @@ export function PostingCard({ posting }: Props) {
           <p>${posting.price}/month</p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
