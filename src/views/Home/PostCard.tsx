@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { moneyFormatter } from '../../utils';
 import type { Post } from '../../types';
 
 /**
@@ -34,8 +35,7 @@ export function PostCard({ post }: Props) {
         </div>
 
         <div className="w-full">
-          {/* @todo add money formatting */}
-          <p>${post.price}/month</p>
+          <p>{moneyFormatter(post.price)} / month</p>
         </div>
       </div>
     </Link>
